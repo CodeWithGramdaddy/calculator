@@ -1,191 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./index.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Calculator</title>
+  <link rel="stylesheet" href="./index.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-
 </head>
-
 <body>
-<div class="generalbody">
+  <div class="generalbody">
     <div class="calculator">
-
-        <div class="calbody">
-            <div class="toplog">
-                <div class="toplogo">
-                    <i class="fa-solid fa-calculator"></i>
-                    <h3>calculator</h3>
-
-                </div>
-                <div class="side1">
-                    <i class="fa-solid fa-minus"></i>
-                    <i class="fa-solid fa-window-maximize"></i>
-                    <i class="fa-solid fa-x"></i>
-
-                </div>
-            </div>
-
-
-
-
-            <div class="secondline">
-                <div class="line2">
-                    <i class="fa-solid fa-bars"></i>
-                    <h2>Standard </h2>
-                    <i class="fa-solid fa-maximize"></i>
-                </div>
-                <i class="fa-solid fa-circle-info"></i>
-            </div>
-
-
-
-           <div>
-            <input type="text" name="" id="firstInput" class="firstInp" >
-            <input type="text" name="" id="secondInput" class="secondInp" placeholder="0" >
-           </div>
-
-           <div class="thirdline">
-            <p>MC</p>
-            <p>MR</p>
-            <p>M+</p>
-            <p>M-</p>
-            <p>MS</p>
-            <p>M-</p>
-           </div>
-
-           <div class="butsec">
-            <button onclick="operators('%')">%</button>
-            <button onclick="clearAll('CE')">CE</button>
-            <button onclick="clearInput('C')">C</button>
-            <button onclick="deleteLast()"> <i class="fa-solid fa-delete-left"></i></button>
-            <button onclick="operators('1/')">1/X</button>
-            <button onclick="operators('^')"> x^2</button>
-            <button onclick="operators('√')"> <i class="fa-solid fa-square-root-variable"></i></button>
-            <button onclick="operators('÷')">÷</button>
-            <button onclick="appendNumber(7)">7</button>
-            <button onclick="appendNumber(8)">8</button>
-            <button onclick="appendNumber(9)">9</button>
-            <button onclick="operators('*')">×</button>
-            <button onclick="appendNumber(4)">4</button>
-            <button onclick="appendNumber(5)">5</button>
-            <button onclick="appendNumber(6)">6</button>
-            <button onclick="operators('-')">-</button>
-            <button onclick="appendNumber(1)">1</button>
-            <button onclick="appendNumber(2)">2</button>
-            <button onclick="appendNumber(3)">3</button>
-            <button onclick="operators('+')">+</button>
-            <button>±</button>
-            <button onclick="appendNumber(0)">0</button>
-            <button onclick="decimal('.')">.</button>
-            <button onclick="equals()">=</button>
-           </div>
+      <div class="calbody">
+        <div class="toplog">
+          <div class="toplogo">
+            <i class="fa-solid fa-calculator"></i>
+            <h3>Calculator</h3>
+          </div>
+          <div class="side1">
+            <i class="fa-solid fa-minus"></i>
+            <i class="fa-solid fa-window-maximize"></i>
+            <i class="fa-solid fa-x"></i>
+          </div>
         </div>
 
+        <div class="secondline">
+          <div class="line2">
+            <i class="fa-solid fa-bars"></i>
+            <h2>Standard</h2>
+            <i class="fa-solid fa-maximize"></i>
+          </div>
+          <i class="fa-solid fa-circle-info"></i>
+        </div>
 
-        
+        <div>
+          <input type="text" id="firstInput" class="firstInp" readonly />
+          <input type="text" id="secondInput" class="secondInp" placeholder="0" readonly />
+        </div>
+
+        <div class="thirdline">
+          <p>MC</p>
+          <p>MR</p>
+          <p>M+</p>
+          <p>M-</p>
+          <p>MS</p>
+          <p>MC</p>
+        </div>
+
+        <div class="butsec">
+          <button onclick="operators('%')">%</button>
+          <button onclick="clearAll()">CE</button>
+          <button onclick="clearInput()">C</button>
+          <button onclick="deleteLast()"><i class="fa-solid fa-delete-left"></i></button>
+          <button onclick="operators('1/')">1/X</button>
+          <button onclick="operators('^')">x²</button>
+          <button onclick="operators('√')"><i class="fa-solid fa-square-root-variable"></i></button>
+          <button onclick="operators('÷')">÷</button>
+          <button onclick="appendNumber(7)">7</button>
+          <button onclick="appendNumber(8)">8</button>
+          <button onclick="appendNumber(9)">9</button>
+          <button onclick="operators('*')">×</button>
+          <button onclick="appendNumber(4)">4</button>
+          <button onclick="appendNumber(5)">5</button>
+          <button onclick="appendNumber(6)">6</button>
+          <button onclick="operators('-')">-</button>
+          <button onclick="appendNumber(1)">1</button>
+          <button onclick="appendNumber(2)">2</button>
+          <button onclick="appendNumber(3)">3</button>
+          <button onclick="operators('+')">+</button>
+          <button onclick="toggleSign()">±</button>
+          <button onclick="appendNumber(0)">0</button>
+          <button onclick="decimal('.')">.</button>
+          <button onclick="equals()">=</button>
+        </div>
+      </div>
     </div>
-</div>
+  </div>
 
+  <script>
+    let canClear = false;
+    let oper = '';
+    let getFirstval = '';
+
+    const firstInput = document.getElementById("firstInput");
+    const secondInput = document.getElementById("secondInput");
+
+    function appendNumber(num) {
+      if (canClear) {
+        secondInput.value = '';
+        canClear = false;
+      }
+      secondInput.value += num;
+    }
+
+    function clearAll() {
+      secondInput.value = '';
+      firstInput.value = '';
+    }
+
+    function clearInput() {
+      secondInput.value = '';
+    }
+
+    function deleteLast() {
+      secondInput.value = secondInput.value.slice(0, -1);
+    }
+
+    function operators(message) {
+      getFirstval = secondInput.value;
+      oper = message;
+      canClear = true;
+      firstInput.value = getFirstval + oper;
+    }
+
+    function equals() {
+      let secondVal = Number(secondInput.value);
+
+      switch (oper) {
+        case '+':
+          firstInput.value = `${getFirstval}+${secondInput.value}=`;
+          secondInput.value = Number(getFirstval) + secondVal;
+          break;
+        case '-':
+          firstInput.value = `${getFirstval}-${secondInput.value}=`;
+          secondInput.value = Number(getFirstval) - secondVal;
+          break;
+        case '*':
+          firstInput.value = `${getFirstval}×${secondInput.value}=`;
+          secondInput.value = Number(getFirstval) * secondVal;
+          break;
+        case '÷':
+          firstInput.value = `${getFirstval}÷${secondInput.value}=`;
+          secondInput.value = Number(getFirstval) / secondVal;
+          break;
+        case '%':
+          firstInput.value = `${getFirstval}% of ${secondInput.value}=`;
+          secondInput.value = (Number(getFirstval) * secondVal) / 100;
+          break;
+        case '1/':
+          firstInput.value = `1/${secondInput.value}=`;
+          secondInput.value = 1 / secondVal;
+          break;
+        case '√':
+          firstInput.value = `√${getFirstval}=`;
+          secondInput.value = Math.sqrt(Number(getFirstval));
+          break;
+        case '^':
+          firstInput.value = `${getFirstval}^${secondInput.value}=`;
+          secondInput.value = Math.pow(Number(getFirstval), secondVal);
+          break;
+        default:
+          break;
+      }
+    }
+
+    function decimal(dot) {
+      if (!secondInput.value.includes('.')) {
+        secondInput.value += dot;
+      }
+    }
+
+    function toggleSign() {
+      secondInput.value = Number(secondInput.value) * -1;
+    }
+  </script>
 </body>
-
-<script> 
-let canClear=false
-let oper =''
-let getFirstval
-let canCalculate = false
-
-function appendNumber(num) {
-    if(canClear){
-        secondInput.value= ''
-        canClear= false
-    }
-    // const secondInput = document.getElementById("secondInput");
-    // console.log(num);
-    
-    secondInput.value += num;
-}
-function clearAll() {
-    // const secondInput = document.getElementById("secondInput");
-    secondInput.value = '';
-    firstInput.value = '';
-    
-}
-function clearInput() {
-    const secondInput = document.getElementById("secondInput");
-    secondInput.value = '';
-    
-}
-function deleteLast() {
-    const secondInput = document.getElementById("secondInput");
-    secondInput.value = secondInput.value.slice(0,-1) ;
-    
-}
-function operators(message) {
-    getFirstval  = secondInput.value;
-    oper=message;
-    canClear = true;
-
-firstInput.value = getFirstval + oper;
-}
-
-function equals() {
-    if (oper== '+') {
-        firstInput.value = getFirstval + '+' + secondInput.value + "="
-        secondInput.value = Number(getFirstval) + Number(secondInput.value)
-        
-    }
-    else if (oper== '-'){
-        firstInput.value = getFirstval + '-' + secondInput.value + "="
-        secondInput.value = Number(getFirstval) - Number(secondInput.value)
-        
-    }
-    
-    else if (oper== '*'){
-        firstInput.value = getFirstval + '*' + secondInput.value + "="
-        secondInput.value = Number(getFirstval) * Number(secondInput.value)
-    }
-     
-    else if (oper== '÷'){
-        firstInput.value = getFirstval + '÷' + secondInput.value + "="
-        secondInput.value = Number(getFirstval) / Number(secondInput.value)
-    }
-
-    else if (oper== '%'){
-        firstInput.value = secondInput.value + '%' +  "="
-        secondInput.value =Number(secondInput.value)/ 100
-    }
-
-    else if (oper== ''){
-        firstInput.value === 1 +  '/' + secondInput.value  + "="
-        secondInput.value = 1/secondInput.valuex
-    }
-    
-    
-    
-
-
-    else if (oper== '√'){
-        firstInput.value = getFirstval + '√' + "="
-        secondInput.value = Number(Math.sqrt(getFirstval));
-    }
-    else if (oper== '^'){
-        firstInput.value = getFirstval + '^' + secondInput.value + "="
-        secondInput.value = Number(getFirstval) ** Number(secondInput.value)
-    }
-   
-}
-function decimal(deci) {
-        secondInput.value += deci;
-        
-    }
-
-
-
-</script>
 </html>
